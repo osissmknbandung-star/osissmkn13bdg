@@ -1,0 +1,41 @@
+[
+  { "nama": "Salsya Aprilia Hikmah", "jabatan": "Ketua Umum", "bagian": "Trikora", "foto": "img/pengurus/salsya.jpg" },
+  { "nama": "Bima Pangestu Sejati", "jabatan": "Wakil Ketua 1", "bagian": "Trikora", "foto": "img/pengurus/bima.jpg" },
+  { "nama": "Loviola Ameira Prameswari", "jabatan": "Wakil Ketua 2", "bagian": "Trikora", "foto": "img/pengurus/ola.jpg" },
+
+  { "nama": "Nama Sekretaris 1", "jabatan": "Sekretaris 1", "bagian": "Sekretaris", "foto": "img/pengurus/sekretaris1.jpg" },
+  { "nama": "Nama Sekretaris 2", "jabatan": "Sekretaris 2", "bagian": "Sekretaris", "foto": "img/pengurus/sekretaris2.jpg" },
+
+  { "nama": "Nama Bendahara 1", "jabatan": "Bendahara 1", "bagian": "Bendahara", "foto": "img/pengurus/bendahara1.jpg" },
+  { "nama": "Nama Bendahara 2", "jabatan": "Bendahara 2", "bagian": "Bendahara", "foto": "img/pengurus/bendahara2.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 1", "jabatan": "Ketua Sekbid 1", "bagian": "Sekbid 1 - Ketakwaan terhadap Tuhan YME", "foto": "img/pengurus/sekbid1-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 1 - Ketakwaan terhadap Tuhan YME", "foto": "img/pengurus/sekbid1-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 2", "jabatan": "Ketua Sekbid 2", "bagian": "Sekbid 2 - Budi Pekerti Luhur / Akhlak Mulia", "foto": "img/pengurus/sekbid2-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 2 - Budi Pekerti Luhur / Akhlak Mulia", "foto": "img/pengurus/sekbid2-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 3", "jabatan": "Ketua Sekbid 3", "bagian": "Sekbid 3 - Kepribadian Unggul, Wawasan Kebangsaan, dan Bela Negara", "foto": "img/pengurus/sekbid3-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 3 - Kepribadian Unggul, Wawasan Kebangsaan, dan Bela Negara", "foto": "img/pengurus/sekbid3-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 4", "jabatan": "Ketua Sekbid 4", "bagian": "Sekbid 4 - Prestasi Akademik, Seni, dan Olahraga", "foto": "img/pengurus/sekbid4-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 4 - Prestasi Akademik, Seni, dan Olahraga", "foto": "img/pengurus/sekbid4-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 5", "jabatan": "Ketua Sekbid 5", "bagian": "Sekbid 5 - Demokrasi, HAM, Pendidikan Politik, dan Lingkungan Hidup", "foto": "img/pengurus/sekbid5-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 5 - Demokrasi, HAM, Pendidikan Politik, dan Lingkungan Hidup", "foto": "img/pengurus/sekbid5-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 6", "jabatan": "Ketua Sekbid 6", "bagian": "Sekbid 6 - Kreativitas, Keterampilan, dan Kewirausahaan", "foto": "img/pengurus/sekbid6-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 6 - Kreativitas, Keterampilan, dan Kewirausahaan", "foto": "img/pengurus/sekbid6-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 7", "jabatan": "Ketua Sekbid 7", "bagian": "Sekbid 7 - Kualitas Jasmani, Kesehatan, dan Gizi", "foto": "img/pengurus/sekbid7-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 7 - Kualitas Jasmani, Kesehatan, dan Gizi", "foto": "img/pengurus/sekbid7-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 8", "jabatan": "Ketua Sekbid 8", "bagian": "Sekbid 8 - Sastra dan Budaya", "foto": "img/pengurus/sekbid8-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 8 - Sastra dan Budaya", "foto": "img/pengurus/sekbid8-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 9", "jabatan": "Ketua Sekbid 9", "bagian": "Sekbid 9 - Teknologi Informasi dan Komunikasi", "foto": "img/pengurus/sekbid9-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 9 - Teknologi Informasi dan Komunikasi", "foto": "img/pengurus/sekbid9-anggota.jpg" },
+
+  { "nama": "Nama Ketua Sekbid 10", "jabatan": "Ketua Sekbid 10", "bagian": "Sekbid 10 - Komunikasi dalam Bahasa Inggris", "foto": "img/pengurus/sekbid10-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 10 - Komunikasi dalam Bahasa Inggris", "foto": "img/pengurus/sekbid10-anggota.jpg" }
+]
