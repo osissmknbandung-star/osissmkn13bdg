@@ -11,6 +11,7 @@ const PER_TAHAP = 9;       // jumlah artikel per tahap di halaman Artikel
 const GAMBAR_CADANGAN = "img/default.svg";
 const POTONG_IG_BAWAAN = 54;  // px bagian atas embed Instagram yang dipotong
 const LEBAR_FOTO_ISI = "480px";  // lebar bawaan foto yang diselipkan di sela paragraf
+const KODE_GOATCOUNTER = "osis13bdg";     // isi kode GoatCounter kamu, contoh "osis13bdg". Kosong = statistik mati
 
 // ===== Fungsi bantu =====
 async function ambilData(url) {
@@ -31,6 +32,34 @@ function tampilkanError(idKotak, e) {
   const k = document.getElementById(idKotak);
   if (k) k.innerHTML = `<p class="galat">Data gagal dimuat: ${esc(e.message)}<br>
     Cek file di folder <b>data/</b> (biasanya salah koma atau kutip) dan buka web lewat <b>Live Server</b>.</p>`;
+}
+
+// ===== Statistik pengunjung (GoatCounter) =====
+// Memasang penghitung di semua halaman. Halaman baca dicatat per artikel: /baca/<id>
+function pasangStatistik() {
+  if (!KODE_GOATCOUNTER) return;
+  window.goatcounter = {
+    path: function (p) {
+      const id = new URLSearchParams(location.search).get("id");
+      return id ? "/baca/" + id.trim().toLowerCase() : p;
+    }
+  };
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "//gc.zgo.at/count.js";
+  s.dataset.goatcounter = "https://" + KODE_GOATCOUNTER + ".goatcounter.com/count";
+  document.head.appendChild(s);
+}
+
+// Ambil jumlah tayangan satu artikel (0 kalau belum ada data atau gagal diambil)
+async function ambilViews(id) {
+  try {
+    const path = "/baca/" + String(id).trim().toLowerCase();
+    const r = await fetch("https://" + KODE_GOATCOUNTER + ".goatcounter.com/counter/" + encodeURIComponent(path) + ".json");
+    if (!r.ok) return 0;
+    const d = await r.json();
+    return parseInt(String(d.count).replace(/\D/g, ""), 10) || 0;
+  } catch (e) { return 0; }
 }
 
 // Satu kartu artikel (dipakai di beranda, halaman Artikel, dan Artikel Terkait)
@@ -375,16 +404,24 @@ async function muatDetail() {
 
   if (MODE_SETEL) pasangSetel(kotak);
 
-  // Kolom samping: Artikel Populer (yang ditandai "populer": true, kalau tidak ada pakai yang terbaru)
+  // Kolom samping: Artikel Populer
+  // Kalau KODE_GOATCOUNTER terisi: diurutkan dari yang paling banyak dilihat, lengkap dengan jumlahnya.
+  // Kalau kosong: pakai yang ditandai "populer": true (atau yang terbaru).
   const samping = document.getElementById("samping");
   if (samping) {
-    let populer = lain.filter(x => x.populer);
-    if (!populer.length) populer = lain;
+    let populer;
+    if (KODE_GOATCOUNTER) {
+      populer = await Promise.all(lain.map(async x => ({ ...x, views: await ambilViews(x.id) })));
+      populer.sort((a, b) => b.views - a.views || terbaruDulu(a, b));
+    } else {
+      populer = lain.filter(x => x.populer);
+      if (!populer.length) populer = lain;
+    }
     samping.innerHTML = `
       <h3><i class="fa-solid fa-fire"></i> Artikel Populer</h3>
       <ol class="daftar-populer">
         ${populer.slice(0, 5).map(x => `
-          <li><a href="${linkBaca(x.id)}">${x.judul}<small>${formatTanggal(x.tanggal)}</small></a></li>`).join("")}
+          <li><a href="${linkBaca(x.id)}">${x.judul}<small>${formatTanggal(x.tanggal)}${KODE_GOATCOUNTER ? ` &nbsp;·&nbsp; <i class="fa-regular fa-eye"></i> ${x.views.toLocaleString("id-ID")}` : ""}</small></a></li>`).join("")}
       </ol>`;
   }
 }
@@ -402,6 +439,7 @@ function bukaHalaman() {
 
 // ===== Jalankan =====
 pasangKerangka();
+pasangStatistik();
 muatTerbaru().catch(e => tampilkanError("daftar-terbaru", e));
 muatDaftar().catch(e => tampilkanError("daftar-semua", e));
 muatPengurus().catch(e => tampilkanError("daftar-pengurus", e));
