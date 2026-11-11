@@ -1,7 +1,7 @@
 // ===== PENGATURAN: ganti di sini saja =====
 const NOMOR_WA = "628123456789";   // format 62, tanpa 0 di depan
 const SOSMED = {
-  x: "#",  // ganti "#" dengan link akun X kamu, contoh https://x.com/namaakun
+  x: "https://x.com/osissmkn13bdg",
   instagram: "https://www.instagram.com/osissmkn13bandung",
   tiktok: "https://www.tiktok.com/@osissmkn13bandung",
   youtube: "https://www.youtube.com/@osis13bandung73"
