@@ -8,13 +8,13 @@
   --redup: #b8b8b8;
   --ig-header: 54px;  /* bawaan: tinggi bagian atas embed Instagram yang dipotong */
 }
- 
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
 body { font-family: Arial, sans-serif; background: var(--hitam); color: var(--teks); line-height: 1.6; overflow-wrap: break-word; }
 img { max-width: 100%; display: block; }
 :focus-visible { outline: 2px solid var(--aksen); outline-offset: 2px; }
- 
+
 /* Navbar */
 .navbar {
   position: sticky; top: 0; z-index: 10;
@@ -25,7 +25,7 @@ img { max-width: 100%; display: block; }
 .logo img { height: 44px; width: auto; }
 .navbar nav a { color: var(--teks); font-weight: bold; font-size: 15px; text-decoration: none; margin-left: 24px; }
 .navbar nav a:hover, .navbar nav a.menu-aktif { color: var(--aksen); }
- 
+
 /* Hero (beranda) dengan foto latar */
 .hero {
   min-height: 85vh; display: flex; flex-direction: column;
@@ -42,14 +42,14 @@ img { max-width: 100%; display: block; }
   padding: 12px 28px; border-radius: 8px; text-decoration: none; border: 0; cursor: pointer; font-size: 16px;
 }
 .btn:hover { background: var(--aksen-hover); }
- 
+
 /* Bagian umum */
 .section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 .section h2 { color: var(--aksen); margin-bottom: 24px; font-size: 30px; }
 .section h3 { color: var(--aksen); margin: 18px 0 6px; }
 .galat { color: #ff9b9b; line-height: 1.7; }
 .section code { background: var(--kartu); border: 1px solid var(--garis); padding: 2px 6px; border-radius: 4px; color: var(--aksen); word-break: break-all; }
- 
+
 /* Kartu artikel */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
 .card { background: var(--kartu); border: 1px solid var(--garis); border-radius: 10px; overflow: hidden; text-decoration: none; color: var(--teks); }
@@ -60,7 +60,7 @@ img { max-width: 100%; display: block; }
 .card-body p { font-size: 14px; margin-bottom: 8px; color: var(--redup); }
 .card-body small { color: var(--redup); }
 .tag { background: var(--aksen); color: #000; font-size: 12px; font-weight: bold; padding: 3px 10px; border-radius: 20px; }
- 
+
 /* Pengurus */
 .section .bagian { margin: 32px 0 14px; padding-bottom: 6px; border-bottom: 2px solid var(--aksen); color: var(--aksen); }
 .grid-p { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
@@ -68,7 +68,7 @@ img { max-width: 100%; display: block; }
 .pengurus img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin: 0 auto 10px; background: #222; border: 3px solid var(--aksen); }
 .pengurus h4 { font-size: 15px; }
 .pengurus p { font-size: 13px; color: var(--redup); }
- 
+
 /* Halaman Artikel: judul, kolom cari, kategori */
 .judul-halaman { text-align: center; padding: 48px 20px; background: #030303; border-bottom: 2px solid var(--aksen); }
 .judul-halaman h1 { color: var(--aksen); font-size: 40px; margin-bottom: 8px; }
@@ -82,7 +82,7 @@ img { max-width: 100%; display: block; }
 .chip.aktif { background: var(--aksen); color: #000; }
 .jumlah { text-align: center; color: var(--redup); font-size: 14px; margin-bottom: 24px; }
 .kosong { display: none; text-align: center; color: var(--redup); padding: 40px 0; }
- 
+
 /* Halaman baca artikel ala portal berita: isi + kolom samping */
 .baca-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 32px; align-items: start; }
 .baca { max-width: 760px; }
@@ -94,17 +94,17 @@ img { max-width: 100%; display: block; }
 .baca .cover { width: 100%; max-height: 380px; object-fit: cover; border-radius: 10px; margin: 20px 0; }
 .baca p { margin-bottom: 18px; line-height: 1.8; }
 .baca .card-body p { margin-bottom: 8px; line-height: 1.6; }
- 
+
 /* Foto kecil yang diselipkan di sela paragraf artikel */
 .baca .foto-isi { margin: 24px auto; }
 .baca .foto-isi img { width: 100%; height: auto; border-radius: 8px; }
 .baca .foto-isi figcaption { text-align: center; font-size: 13px; color: var(--redup); margin-top: 8px; }
- 
+
 /* Hashtag: bisa diklik, kuning saat disentuh atau ditekan */
 .tagar-wadah { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0; padding: 24px 0; border-top: 1px solid var(--garis); border-bottom: 1px solid var(--garis); }
 .tagar { display: inline-block; background: var(--kartu); color: var(--redup); border: 1px solid var(--garis); border-radius: 30px; padding: 7px 16px; font-size: 13px; font-weight: bold; text-decoration: none; transition: background .15s, color .15s; }
 .tagar:hover, .tagar:focus, .tagar:active { background: var(--aksen); color: #000; border-color: var(--aksen); }
- 
+
 .baca .judul-terkait { margin: 8px 0 20px; }
 .baca .kembali { margin-top: 56px; margin-bottom: 0; }
 .samping { background: var(--kartu); border: 1px solid var(--garis); border-radius: 12px; padding: 20px; position: sticky; top: 90px; }
@@ -116,7 +116,7 @@ img { max-width: 100%; display: block; }
 .daftar-populer a { color: var(--teks); text-decoration: none; font-weight: bold; font-size: 15px; line-height: 1.4; }
 .daftar-populer a:hover { color: var(--aksen); }
 .daftar-populer small { display: block; margin-top: 4px; color: var(--redup); font-weight: normal; font-size: 12px; }
- 
+
 /* Video di dalam artikel */
 .video-wadah { display: grid; gap: 20px; margin-bottom: 24px; }
 .item-video { width: 100%; margin: 0 auto; }
@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; }  /* file mp4 sendiri */
 .video-tt { aspect-ratio: auto; max-width: 420px; margin: 0 auto; background: #fff; height: 740px; }  /* TikTok */
- 
+
 /* Instagram: hanya area video yang terlihat (header dan footer embed dipotong) */
 .video-ig { position: relative; width: 100%; overflow: hidden; border-radius: 10px; background: #000; }
 .video-ig iframe {
@@ -133,7 +133,7 @@ img { max-width: 100%; display: block; }
 }
 .link-ig { display: block; text-align: center; margin-top: 8px; font-size: 13px; color: var(--redup); text-decoration: none; }
 .link-ig:hover { color: var(--aksen); }
- 
+
 /* Mode setel video (hanya muncul kalau alamat memakai &setel=1) */
 .panel-setel { margin-top: 10px; padding: 12px; background: var(--kartu); border: 1px dashed var(--aksen); border-radius: 8px; font-size: 13px; display: grid; gap: 10px; }
 .panel-setel button { background: transparent; color: var(--aksen); border: 1px solid var(--aksen); border-radius: 6px; padding: 7px 12px; cursor: pointer; font-weight: bold; margin: 0 6px 6px 0; }
@@ -141,13 +141,13 @@ img { max-width: 100%; display: block; }
 .panel-setel input[type=range] { width: 100%; max-width: 240px; vertical-align: middle; accent-color: var(--aksen); }
 .panel-setel code { display: block; white-space: pre-wrap; }
 .panel-setel small { color: var(--redup); }
- 
+
 /* Galeri foto dalam artikel & tombol muat lebih banyak */
 .galeri { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
 .galeri img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; background: #222; }
 .galeri a:hover img { opacity: .85; }
 .lebih { text-align: center; margin-top: 28px; }
- 
+
 /* Footer ala Piradio, warna hitam-kuning */
 .footer { background: var(--hitam); border-top: 2px solid var(--aksen); color: var(--redup); padding: 48px 20px 0; font-size: 14px; }
 .footer-isi { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
@@ -163,7 +163,7 @@ img { max-width: 100%; display: block; }
 .btn-wa { display: inline-block; background: #25d366; color: #fff !important; padding: 11px 20px; border-radius: 8px; font-weight: bold; }
 .btn-wa:hover { background: #1fb956; }
 .hak-cipta { max-width: 1100px; margin: 36px auto 0; padding: 18px 0; border-top: 1px solid var(--garis); text-align: center; }
- 
+
 /* Tombol WhatsApp melayang */
 .wa {
   position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px;
@@ -171,27 +171,37 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   font-size: 32px; text-decoration: none; box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
 }
- 
+
 /* Slide halaman (Beranda / Profil / Pengurus) */
 .halaman { display: none; }
 .halaman.aktif { display: block; animation: geser .4s ease; }
 .halaman:not(#beranda) { min-height: 65vh; }
 @keyframes geser { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .halaman.aktif { animation: none; } }
- 
+
+/* Artikel bersambung: nomor halaman di dalam artikel */
+.baca .h1-lanjut { font-size: 28px; margin-bottom: 6px; }
+.info-halaman { color: var(--redup); font-size: 14px; padding-bottom: 14px; margin-bottom: 20px; border-bottom: 1px solid var(--garis); }
+.halaman-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 32px 0 8px; padding-top: 20px; border-top: 1px solid var(--garis); }
+.hn-angka { display: flex; gap: 8px; }
+.hn-no, .hn-btn { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; border-radius: 8px; border: 1.5px solid var(--aksen); color: var(--aksen); font-weight: bold; text-decoration: none; }
+.hn-btn { padding: 0 18px; }
+.hn-no:hover, .hn-btn:hover, .hn-no.aktif { background: var(--aksen); color: #000; }
+.hn-mati { opacity: .35; pointer-events: none; }
+
 /* Responsif (tablet) */
 @media (max-width: 900px) {
   .baca-layout { grid-template-columns: 1fr; }
   .samping { position: static; }
   .baca h1 { font-size: 28px; }
 }
- 
+
 /* Responsif (HP) */
 @keyframes muncul { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
- 
+
 @media (max-width: 600px) {
   html { scroll-padding-top: 90px; }
- 
+
   /* Menu atas: logo di atas, 4 menu sejajar selebar layar (mudah ditekan jempol) */
   .navbar { flex-direction: column; gap: 2px; padding: 8px 12px 0; }
   .logo { font-size: 15px; gap: 8px; }
@@ -199,28 +209,32 @@ img { max-width: 100%; display: block; }
   .navbar nav { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; }
   .navbar nav a { margin: 0; padding: 9px 4px; font-size: 14px; text-align: center; border-bottom: 3px solid transparent; }
   .navbar nav a.menu-aktif { border-bottom-color: var(--aksen); }
- 
+
   /* Beranda */
   .hero { min-height: 60vh; padding: 32px 16px; }
   .hero h1 { font-size: 30px; }
   .hero p { font-size: 16px; }
   .btn { padding: 12px 22px; }
   .halaman.aktif { animation-name: muncul; }  /* tanpa geser samping, supaya layar tidak goyang */
- 
+
   /* Bagian umum dan kartu */
   .section { padding: 36px 16px; }
   .section h2 { font-size: 24px; margin-bottom: 18px; }
   .grid { gap: 18px; }
   .card img { height: 190px; }
- 
+
   /* Halaman Artikel */
   .judul-halaman { padding: 28px 16px; }
   .judul-halaman h1 { font-size: 28px; }
   .chips { gap: 8px; }
   .chip { padding: 8px 14px; font-size: 13px; }
- 
+
   /* Halaman baca */
   .baca h1 { font-size: 25px; }
+  .baca .h1-lanjut { font-size: 22px; }
+  .halaman-nav { justify-content: center; }
+  .hn-angka { order: -1; width: 100%; justify-content: center; }
+  .hn-btn { flex: 1 1 40%; }
   .baca p { font-size: 17px; }
   .baca .cover { max-height: 240px; margin: 16px 0; }
   .meta { gap: 6px 16px; font-size: 13px; }
@@ -228,18 +242,18 @@ img { max-width: 100%; display: block; }
   .samping { padding: 16px; }
   .galeri { grid-template-columns: repeat(2, 1fr); }
   .galeri img { height: 120px; }
- 
+
   /* Pengurus */
   .grid-p { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .pengurus img { width: 104px; height: 104px; }
- 
+
   /* Footer dan tombol WhatsApp */
   .footer { padding: 36px 16px 90px; }
   .footer li a { display: inline-block; padding: 4px 0; }
   .sosmed a { font-size: 24px; padding: 8px; }
   .wa { width: 50px; height: 50px; font-size: 28px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); }
 }
- 
+
 /* HP berlayar sangat kecil */
 @media (max-width: 360px) {
   .logo { font-size: 14px; }
