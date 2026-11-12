@@ -361,12 +361,13 @@ function pasangSetel(kotak) {
 // Isi artikel boleh berisi teks biasa, atau objek foto yang diselipkan di sela paragraf:
 //   { "foto": "img/artikel/x.jpg", "keterangan": "opsional", "lebar": "480px" }
 function menitBaca(isi) {
-  const kata = isi.filter(x => typeof x === "string" && x !== "---").join(" ").split(/\s+/).length;
+  const kata = isi.filter(x => typeof x === "string" && !x.trim().startsWith("---")).join(" ").split(/\s+/).length;
   return Math.max(1, Math.round(kata / 200)); // ±200 kata per menit
 }
 
 // Artikel bersambung. Ada dua cara memisahkan halaman (boleh dipakai bersamaan):
-//  1) tulisan "---" di dalam "isi" = pindah halaman di situ
+//  1) tulisan yang diawali "---" di dalam "isi" = pindah halaman di situ.
+//     Boleh diberi label supaya mudah dibaca, contoh: "--- HALAMAN 2 ---" (label tidak tampil di web)
 //  2) "paragrafPerHalaman": 4 di artikel = otomatis pindah halaman tiap 4 paragraf
 //     (foto di sela paragraf tidak dihitung sebagai paragraf)
 // Tanpa keduanya, artikel tetap satu halaman seperti biasa.
@@ -375,7 +376,7 @@ function bagiHalaman(isi, perHalaman) {
   const hasil = [[]];
   let paragraf = 0;
   isi.forEach(x => {
-    if (x === "---") { hasil.push([]); paragraf = 0; return; }
+    if (typeof x === "string" && x.trim().startsWith("---")) { hasil.push([]); paragraf = 0; return; }
     const teks = typeof x === "string";
     if (batas && teks && paragraf === batas) { hasil.push([]); paragraf = 0; }
     hasil[hasil.length - 1].push(x);
