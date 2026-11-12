@@ -188,6 +188,7 @@ img { max-width: 100%; display: block; }
 .hn-btn { padding: 0 18px; }
 .hn-no:hover, .hn-btn:hover, .hn-no.aktif { background: var(--aksen); color: #000; }
 .hn-mati { opacity: .35; pointer-events: none; }
+.baca .halaman-nav + .kembali { margin-top: 24px; }
 
 /* Responsif (tablet) */
 @media (max-width: 900px) {
