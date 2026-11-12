@@ -440,13 +440,14 @@ async function muatDetail() {
       <h1 class="h1-lanjut">${a.judul}</h1>
       <p class="info-halaman">Halaman ${h} dari ${total}</p>`;
 
-    // Video, galeri, hashtag, dan artikel terkait tampil di halaman terakhir saja
-    const penutup = h < total ? "" : `
+    // Tombol kembali tampil di semua halaman; video, galeri, hashtag, dan artikel terkait hanya di halaman terakhir
+    const kembali = `<p class="kembali"><a class="btn" href="artikel.html">Kembali ke Artikel</a></p>`;
+    const penutup = h < total ? kembali : `
       ${video ? `<h3 class="bagian">Video</h3><div class="video-wadah">${video}</div>` : ""}
       ${galeri ? `<h3 class="bagian">Galeri Foto</h3><div class="galeri">${galeri}</div>` : ""}
       ${tagar ? `<div class="tagar-wadah">${tagar}</div>` : ""}
       ${terkait.length ? `<h2 class="judul-terkait">Artikel Terkait</h2><div class="grid">${terkait.map(kartuArtikel).join("")}</div>` : ""}
-      <p class="kembali"><a class="btn" href="artikel.html">Kembali ke Artikel</a></p>`;
+      ${kembali}`;
 
     kotak.innerHTML = `${kepala}
       ${halaman[h - 1].map(blokIsi).join("")}
