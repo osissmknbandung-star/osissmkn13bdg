@@ -20,7 +20,19 @@ async function ambilData(url) {
   return respon.json();
 }
 function formatTanggal(t) {
-  return new Date(t).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+  return new Date(t).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+}
+// Tanggal satu hari, atau rentang kalau artikel punya "tanggalSelesai" (acara beberapa hari)
+// Contoh hasil: "15 - 17 Desember 2026", "30 November - 2 Desember 2026"
+function formatRentang(a) {
+  if (!a.tanggalSelesai || a.tanggalSelesai === a.tanggal) return formatTanggal(a.tanggal);
+  const m = new Date(a.tanggal), s = new Date(a.tanggalSelesai);
+  if (isNaN(s) || s < m) return formatTanggal(a.tanggal);
+  const f = o => d => d.toLocaleDateString("id-ID", { ...o, timeZone: "UTC" });
+  const hariBulan = f({ day: "numeric", month: "long" }), penuh = f({ day: "numeric", month: "long", year: "numeric" });
+  if (m.getUTCFullYear() === s.getUTCFullYear() && m.getUTCMonth() === s.getUTCMonth()) return `${m.getUTCDate()} \u2013 ${penuh(s)}`;
+  if (m.getUTCFullYear() === s.getUTCFullYear()) return `${hariBulan(m)} \u2013 ${penuh(s)}`;
+  return `${penuh(m)} \u2013 ${penuh(s)}`;
 }
 const terbaruDulu = (a, b) => new Date(b.tanggal) - new Date(a.tanggal);
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -85,7 +97,7 @@ function kartuArtikel(a) {
         <span class="tag">${a.kategori}</span>
         <h3>${a.judul}</h3>
         <p>${a.ringkasan}</p>
-        <small>${formatTanggal(a.tanggal)}</small>
+        <small>${formatRentang(a)}</small>
       </div>
     </a>`;
 }
@@ -353,11 +365,22 @@ function menitBaca(isi) {
   return Math.max(1, Math.round(kata / 200)); // ±200 kata per menit
 }
 
-// Artikel bersambung: tulisan "---" di dalam "isi" memisahkan halaman.
-// Tanpa "---", artikel tetap satu halaman seperti biasa.
-function bagiHalaman(isi) {
+// Artikel bersambung. Ada dua cara memisahkan halaman (boleh dipakai bersamaan):
+//  1) tulisan "---" di dalam "isi" = pindah halaman di situ
+//  2) "paragrafPerHalaman": 4 di artikel = otomatis pindah halaman tiap 4 paragraf
+//     (foto di sela paragraf tidak dihitung sebagai paragraf)
+// Tanpa keduanya, artikel tetap satu halaman seperti biasa.
+function bagiHalaman(isi, perHalaman) {
+  const batas = Number(perHalaman) > 0 ? Number(perHalaman) : 0;
   const hasil = [[]];
-  isi.forEach(x => { if (x === "---") hasil.push([]); else hasil[hasil.length - 1].push(x); });
+  let paragraf = 0;
+  isi.forEach(x => {
+    if (x === "---") { hasil.push([]); paragraf = 0; return; }
+    const teks = typeof x === "string";
+    if (batas && teks && paragraf === batas) { hasil.push([]); paragraf = 0; }
+    hasil[hasil.length - 1].push(x);
+    if (teks) paragraf++;
+  });
   const terisi = hasil.filter(h => h.length);
   return terisi.length ? terisi : [[]];
 }
@@ -412,7 +435,7 @@ async function muatDetail() {
     `<a class="tagar" href="artikel.html?cari=${encodeURIComponent(t)}">#${t}</a>`).join("");
 
   // ----- Halaman-halaman artikel -----
-  const halaman = bagiHalaman(a.isi);
+  const halaman = bagiHalaman(a.isi, a.paragrafPerHalaman);
   const total = halaman.length;
   const halamanDariUrl = () => {
     const n = parseInt(new URLSearchParams(location.search).get("h"), 10);
@@ -421,9 +444,9 @@ async function muatDetail() {
 
   const navHalaman = h => total < 2 ? "" : `
     <nav class="halaman-nav" aria-label="Halaman artikel">
-      <a class="hn-btn${h === 1 ? " hn-mati" : ""}" data-h="${h - 1}" href="${linkBaca(a.id, h - 1)}">&larr; Sebelumnya</a>
+      ${h === 1 ? '<span class="hn-kosong"></span>' : `<a class="hn-btn hn-prev" data-h="${h - 1}" href="${linkBaca(a.id, h - 1)}">&larr; Sebelumnya</a>`}
       <span class="hn-angka">${halaman.map((_, i) => `<a class="hn-no${i + 1 === h ? " aktif" : ""}" data-h="${i + 1}" href="${linkBaca(a.id, i + 1)}"${i + 1 === h ? ' aria-current="page"' : ""}>${i + 1}</a>`).join("")}</span>
-      <a class="hn-btn${h === total ? " hn-mati" : ""}" data-h="${h + 1}" href="${linkBaca(a.id, h + 1)}">Selanjutnya &rarr;</a>
+      ${h === total ? '<span class="hn-kosong"></span>' : `<a class="hn-btn hn-next" data-h="${h + 1}" href="${linkBaca(a.id, h + 1)}">Selanjutnya &rarr;</a>`}
     </nav>`;
 
   const tampilkan = h => {
@@ -431,7 +454,7 @@ async function muatDetail() {
       <span class="tag tag-besar">${a.kategori}</span>
       <h1>${a.judul}</h1>
       <div class="meta">
-        <span><i class="fa-regular fa-calendar"></i> ${formatTanggal(a.tanggal)}</span>
+        <span><i class="fa-regular fa-calendar"></i> ${formatRentang(a)}</span>
         <span><i class="fa-regular fa-user"></i> ${a.penulis || "Tim OSIS"}</span>
         <span><i class="fa-regular fa-clock"></i> ${menitBaca(a.isi)} menit baca</span>
       </div>
@@ -486,7 +509,7 @@ async function muatDetail() {
         <h3><i class="fa-solid fa-fire"></i> Artikel Populer</h3>
         <ol class="daftar-populer">
           ${daftar.slice(0, 5).map(x => `
-            <li><a href="${linkBaca(x.id)}">${x.judul}<small>${formatTanggal(x.tanggal)}${x.views != null ? ` &nbsp;·&nbsp; <i class="fa-regular fa-eye"></i> ${x.views.toLocaleString("id-ID")}` : ""}</small></a></li>`).join("")}
+            <li><a href="${linkBaca(x.id)}">${x.judul}<small>${formatRentang(x)}${x.views != null ? ` &nbsp;·&nbsp; <i class="fa-regular fa-eye"></i> ${x.views.toLocaleString("id-ID")}` : ""}</small></a></li>`).join("")}
         </ol>`;
     };
     let awalan = lain.filter(x => x.populer);
