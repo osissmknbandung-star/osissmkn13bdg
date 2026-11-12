@@ -71,18 +71,17 @@
     ]
   },
   {
-    "id": "uknwown",
-    "judul": "uknown",
+    "id": "Thirtic",
+    "judul": "Thirtic (Thirteen, Artistic, Atletic)",
     "kategori": "Acara",
-    "tanggal": "2026-10-20",
-    "penulis": "Tim Redaksi OSIS",
-    "gambar": "img/artikel/pensi.jpg",
-    "ringkasan": "comming soon.",
-    "tag": ["pentas seni", "pensi sekolah"],
+    "tanggal": "2026-12-18",
+    "penulis": "OSIS Sekbid 9",
+    "gambar": "img/artikel/thirtic1.jpg",
+    "ringkasan": "OSIS SMKN 13 Bandung mengadakan Event besar 1 tahun sekali yaitu Thirtic.",
+    "tag": ["pentas seni", "Olahraga", "Band", "Esport"],
     "populer": true,
     "video": [
-      "https://www.youtube.com/watch?v=4ta8Zy7r5i0&t=3s",
-      "https://www.instagram.com/reel/ABC123xyz/"
+      "https://www.instagram.com/reel/DaJtXpPSBr2"
     ],
     "galeri": [
       "img/artikel/pensi-1.jpg",
