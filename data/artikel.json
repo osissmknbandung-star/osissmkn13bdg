@@ -89,8 +89,11 @@
       "img/artikel/pensi-2.jpg"
     ],
     "isi": [
-      "Paragraf pertama artikel kedua.",
-      "Paragraf kedua artikel kedua."
+      "Paragraf pertama artikel kedua. Ini isi halaman 1.",
+      "---",
+      "Paragraf kedua artikel kedua. Ini isi halaman 2.",
+      "---",
+      "Paragraf ketiga artikel kedua. Ini isi halaman 3."
     ]
   }
 ]
