@@ -74,7 +74,8 @@
     "id": "Thirtic",
     "judul": "Thirtic (Thirteen, Artistic, Atletic)",
     "kategori": "Acara",
-    "tanggal": "2025-12-18",
+    "tanggal": "2025-12-15",
+    "tanggalSelesai": "2025-12-18",
     "penulis": "OSIS Sekbid 9",
     "gambar": "img/artikel/thirtic1.jpg",
     "ringkasan": "OSIS SMKN 13 Bandung mengadakan Event besar 1 tahun sekali yaitu Thirtic.",
@@ -88,11 +89,24 @@
       "img/artikel/pensi-2.jpg"
     ],
     "isi": [
+      "--- HALAMAN 1 ---",
       "OSIS SMKN 13 Bandung menyelenggarakan kegiatan Pekan Olahraga dan Seni (PORSENI) yang diberi nama THIRTIC, singkatan dari Thirteen Artistic Athletic. Kegiatan ini merupakan salah satu program sekolah yang bertujuan untuk mewadahi minat, bakat, serta kreativitas peserta didik, khususnya dalam bidang olahraga dan seni. Melalui kegiatan ini, seluruh siswa diberikan kesempatan untuk menunjukkan kemampuan, mengembangkan potensi, serta berpartisipasi dalam berbagai perlombaan.",
       "Kegiatan THIRTIC dilaksanakan selama empat hari, mulai tanggal 15 hingga 18. Selama pelaksanaannya, berbagai perlombaan diselenggarakan dengan melibatkan peserta didik dari berbagai kelas. Kegiatan ini juga menjadi sarana untuk mempererat hubungan antarsiswa, membangun rasa kebersamaan, serta menumbuhkan semangat kompetisi yang positif di lingkungan sekolah.",
-      "Paragraf kedua artikel kedua. Ini isi halaman 2.",
-      "---",
-      "Paragraf ketiga artikel kedua. Ini isi halaman 3."
+      { "foto": "img/artikel/thirtic2.jpg", "keterangan": "Ganti dengan keterangan foto" },
+      "Ganti tulisan ini dengan isi paragraf ke-3.",
+      "Ganti tulisan ini dengan isi paragraf ke-4.",
+      "--- HALAMAN 2 ---",
+      "Ganti tulisan ini dengan isi paragraf ke-5.",
+      "Ganti tulisan ini dengan isi paragraf ke-6.",
+      { "foto": "img/artikel/thirtic3.jpg", "keterangan": "Ganti dengan keterangan foto" },
+      "Ganti tulisan ini dengan isi paragraf ke-7.",
+      "Ganti tulisan ini dengan isi paragraf ke-8.",
+      "--- HALAMAN 3 ---",
+      "Ganti tulisan ini dengan isi paragraf ke-9.",
+      "Ganti tulisan ini dengan isi paragraf ke-10.",
+      { "foto": "img/artikel/thirtic4.jpg", "keterangan": "Ganti dengan keterangan foto" },
+      "Ganti tulisan ini dengan isi paragraf ke-11.",
+      "Ganti tulisan ini dengan isi paragraf ke-12."
     ]
   }
 ]
