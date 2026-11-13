@@ -9,14 +9,14 @@
   { "nama": "Nama Bendahara 1", "jabatan": "Bendahara 1", "bagian": "Bendahara", "foto": "img/pengurus/bendahara1.jpg" },
   { "nama": "Nama Bendahara 2", "jabatan": "Bendahara 2", "bagian": "Bendahara", "foto": "img/pengurus/bendahara2.jpg" },
 
-  { "nama": "Nama Ketua Sekbid 1", "jabatan": "Ketua Sekbid 1", "bagian": "Sekbid 1 - Ketakwaan terhadap Tuhan YME", "foto": "img/pengurus/sekbid1-ketua.jpg" },
-  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 1 - Ketakwaan terhadap Tuhan YME", "foto": "img/pengurus/sekbid1-anggota.jpg" },
+  { "nama": "Nama Ketua Sekbid 1", "jabatan": "Ketua Sekbid 1", "bagian": "Sekbid 1 - 𝘒𝘦𝘪𝘮𝘢𝘯𝘢𝘯 & 𝘒𝘦𝘵𝘢𝘬𝘸𝘢𝘢𝘯 𝘬𝘦𝘱𝘢𝘥𝘢 𝘛𝘶𝘩𝘢𝘯 𝘠𝘢𝘯𝘨 𝘔𝘢𝘩𝘢 𝘌𝘴𝘢", "foto": "img/pengurus/sekbid1-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 1 - 𝘒𝘦𝘪𝘮𝘢𝘯𝘢𝘯 & 𝘒𝘦𝘵𝘢𝘬𝘸𝘢𝘢𝘯 𝘬𝘦𝘱𝘢𝘥𝘢 𝘛𝘶𝘩𝘢𝘯 𝘠𝘢𝘯𝘨 𝘔𝘢𝘩𝘢 𝘌𝘴𝘢", "foto": "img/pengurus/sekbid1-anggota.jpg" },
 
-  { "nama": "Nama Ketua Sekbid 2", "jabatan": "Ketua Sekbid 2", "bagian": "Sekbid 2 - Budi Pekerti Luhur / Akhlak Mulia", "foto": "img/pengurus/sekbid2-ketua.jpg" },
-  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 2 - Budi Pekerti Luhur / Akhlak Mulia", "foto": "img/pengurus/sekbid2-anggota.jpg" },
+  { "nama": "Nama Ketua Sekbid 2", "jabatan": "Ketua Sekbid 2", "bagian": "Sekbid 2 - Sosial", "foto": "img/pengurus/sekbid2-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 2 - Sosial", "foto": "img/pengurus/sekbid2-anggota.jpg" },
 
-  { "nama": "Nama Ketua Sekbid 3", "jabatan": "Ketua Sekbid 3", "bagian": "Sekbid 3 - Kepribadian Unggul, Wawasan Kebangsaan, dan Bela Negara", "foto": "img/pengurus/sekbid3-ketua.jpg" },
-  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 3 - Kepribadian Unggul, Wawasan Kebangsaan, dan Bela Negara", "foto": "img/pengurus/sekbid3-anggota.jpg" },
+  { "nama": "Nama Ketua Sekbid 3", "jabatan": "Ketua Sekbid 3", "bagian": "Sekbid 3 - 𝘗𝘦𝘯𝘥𝘪𝘥𝘪𝘬𝘢𝘯 𝘉𝘦𝘭𝘢 𝘕𝘦𝘨𝘢𝘳𝘢", "foto": "img/pengurus/sekbid3-ketua.jpg" },
+  { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 3 - 𝘗𝘦𝘯𝘥𝘪𝘥𝘪𝘬𝘢𝘯 𝘉𝘦𝘭𝘢 𝘕𝘦𝘨𝘢𝘳𝘢", "foto": "img/pengurus/sekbid3-anggota.jpg" },
 
   { "nama": "Nama Ketua Sekbid 4", "jabatan": "Ketua Sekbid 4", "bagian": "Sekbid 4 - Prestasi Akademik, Seni, dan Olahraga", "foto": "img/pengurus/sekbid4-ketua.jpg" },
   { "nama": "Nama Anggota", "jabatan": "Anggota", "bagian": "Sekbid 4 - Prestasi Akademik, Seni, dan Olahraga", "foto": "img/pengurus/sekbid4-anggota.jpg" },
